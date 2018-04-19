@@ -1,3 +1,4 @@
+require 'pry'
 
 
 class Application
@@ -7,11 +8,11 @@ class Application
   def call(env)
     resp = Rack::Response.new
     req = Rack::Request.new(env)
-
+    binding.pry
     if req.path.match(/items/)
       @@items.each do |item|
         item.price
-      end 
+      end
     else
       resp.write "Route not found"
       resp.status = 404
