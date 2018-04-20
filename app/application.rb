@@ -14,6 +14,7 @@ class Application
       @@items.each do |item|
         if item.name == item_name
           resp.write item.price
+          return resp.finish
           resp.finish
         end
       end
