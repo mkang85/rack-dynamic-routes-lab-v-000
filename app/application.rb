@@ -15,7 +15,6 @@ class Application
         if item.name == item_name
           resp.write item.price
           return resp.finish
-          resp.finish
         end
       end
       resp.write "Item not found"
